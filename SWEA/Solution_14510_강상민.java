@@ -2,7 +2,37 @@ package SWEA;
 import java.io.*;
 import java.util.*;
 
-// 소스코드가 더러워요.....
+/*
+ex) tree: 4 2 3 1 2 1 1
+
+최대값 - tree 해서 need 배열 생성 : 0 2 1 3 2 3 3
+
+0이 아닌 것 중, 홀 4 짝 2
+
+홀수만큼 (1,2) 순서쌍 무조건 필요
+
+(1,2) * 4,  → 8일 가져가기
+
+먼저 홀수에 대해 1씩 뺌 0 0 2 2 2 2 2
+
+홀 0 짝 5됨
+
+여기서 짝수만 남는데, 8만큼 감소 시킬 여력 따로 저장했음
+
+따로 저장한 감소 시킬 여력보다 짝수의 합이 적으면 result -1 하고 출력, continue
+
+짝수 총합 10인데 8빼면 2남음
+
+결국
+
+2 만 남고, 
+
+(2 / 3) * 2 만큼 result 더하고
+
+2%3 = 2 되고, 
+
+이 값이 2이면 result 에 2, 1이면 result 에 1
+*/
 
 public class Solution_14510_강상민 {
   static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -67,17 +97,16 @@ public class Solution_14510_강상민 {
       else if (rest == 1) result += 1;
 
 
-
-
-
       System.out.println("#"+t+" "+result);
 
 
     }
-
 
     
   }
   
   
 }
+
+
+
