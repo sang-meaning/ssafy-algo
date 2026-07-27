@@ -2,6 +2,8 @@ package SWEA;
 import java.io.*;
 import java.util.*;
 
+// 소스코드가 더러워요.....
+
 public class Solution_14510_강상민 {
   static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
   static StringTokenizer st;
