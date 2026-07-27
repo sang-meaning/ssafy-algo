@@ -11,13 +11,12 @@ class Solution_14510_박건순 {
 		T = sc.nextInt();
 
 		for (int test_case = 1; test_case <= T; test_case++) {
-			List<Integer> arr = new ArrayList<>();
+
+			List<Integer> arr = new ArrayList<>();		// 나무 높이 배열
 			int day = 0;
 			int max = 0;
-			int avg = 0;
-			int mod = 0;
-			int odd = 0;
-			int even = 0;
+			int odd = 0;								
+			int even = 0;								
 			int numCount = sc.nextInt();
 
 			for (int i = 0; i < numCount; i++) {
@@ -39,8 +38,8 @@ class Solution_14510_박건순 {
 				day = odd * 2 - 1;
 			} else {
 				int total = odd + (even * 2);
-				avg = total / 3;
-				mod = total % 3;
+				int avg = total / 3;
+				int mod = total % 3;
 				day = avg * 2;
 
 				if (mod == 1) {
