@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Solution_1953 {
+public class Solution_1953_강상민 {
   static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
   static StringTokenizer st;
   static int T;
@@ -89,7 +89,9 @@ public class Solution_1953 {
         }
 
       }
-      System.out.println("#" + t+" "+result+1);
+      // 맨 처음 위치 더하기
+      result +=1;
+      System.out.println("#" + t+" "+result);
     }
 
   }
