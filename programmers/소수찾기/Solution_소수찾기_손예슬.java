@@ -8,7 +8,8 @@ class Solution {
         for(j = 2; j <= n; j++){
             isSosu = true;
             
-            for(i=2; i <= Math.sqrt(j); i++){
+            int limit = (int)Math.sqrt(j);
+            for(i=2; i <= limit; i++){
                 if (j % i == 0) {
                     isSosu = false;
                     break;
