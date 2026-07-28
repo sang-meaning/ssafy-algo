@@ -1,4 +1,4 @@
-class Solution_12921_강지우 {
+class Solution_소수찾기_강지우 {
 	public int solution(int n) {
         boolean[] check = new boolean[n+1];
 
