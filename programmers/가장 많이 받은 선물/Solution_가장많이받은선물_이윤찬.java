@@ -15,13 +15,9 @@ class Solution {
             pre[y][x] +=1;
         }
         int[][] index = new int[len][2];
-        Map<Integer, Integer> map = new HashMap<>();
         
         for(int i = 0 ; i< len ; i++){
             for (int j=0; j<len; j++){
-                if(pre[i][j]== pre[j][i]){
-                    map.put(i,j);
-                }
                 index[j][0] += pre[i][j];
                 index[j][1] += pre[j][i];
             }
