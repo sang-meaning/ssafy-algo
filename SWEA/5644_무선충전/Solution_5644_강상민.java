@@ -102,7 +102,7 @@ public class Solution_5644_강상민 {
 
                         int sum = 0; // 성능 합
 
-                        if (bc1 == false && bc2 == false) continue; // bc1 과 bc2 가 모두 true 인 조합 찾기
+                        if (bc1 == false && bc2 == false) continue; // bc1 과 bc2 가 모두 false 인 조합만 아니면 됨
 
                         // 4가지 상태 존재
                         if (a==b && bc1 == true && bc2 == true) {
