@@ -28,11 +28,7 @@ class Solution {
         	
         	HashMap<String, Integer> giftMap = members.get(a_person);
         	
-            giftMap.put(
-                    b_person,
-                    giftMap.getOrDefault(b_person, 0) + 1
-            );
-
+            giftMap.put(b_person, giftMap.getOrDefault(b_person, 0) + 1);
         }
         
         
