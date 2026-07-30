@@ -14,6 +14,8 @@ class Solution {
 	public static int[][][] arr;
 	public static Queue<int[]> q;
 	
+	// 문제에는 생략되어 있는 듯 하지만, 도둑은 단일 파이프에 머물러 있는 행위도 할 수 있는 것으로 보임.
+	// 이제 이 문제는 도둑이 주어진 시간 동안 얼마나 많은 땅을 밟을 수 있는지로 치환됨
 	public static void main(String args[]) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		T = sc.nextInt();
@@ -25,7 +27,8 @@ class Solution {
 			C = sc.nextInt();
 			L = sc.nextInt();
 			arr = new int[N][M][4];
-			
+
+			// 각 지점에서 상하좌우로 이동할 수 있는지 배열에 저장 (d = dir)
 			for (int i=0; i<N; i++) {
 				for (int j=0; j<M; j++) {
 					int x = sc.nextInt();
@@ -40,7 +43,8 @@ class Solution {
 			
 			q.add(new int[] {R, C, 1});
 			visited[R][C] = 1;
-			
+
+			// bfs를 돌면서
 			while (!q.isEmpty()) {
 				int[] f = q.poll();
 				int x = f[0], y = f[1], l = f[2];
@@ -49,13 +53,17 @@ class Solution {
 					int nx = x + dx[d];
 					int ny = y + dy[d];
 					if (nx < 0 || nx >= N || ny < 0 || ny >= M) continue;
-					if (arr[x][y][d] == 1 && arr[nx][ny][op[d]] == 1 && visited[nx][ny] == 0 && l<L) {
+					if (visited[nx][ny] == 1) continue;
+					
+					// 이번 지점과 다음 지점에 모두 파이프가 뚫려 있어야 진행. l<L은 거리 조건
+					if (arr[x][y][d] == 1 && arr[nx][ny][op[d]] == 1 && l<L) {
 						q.add(new int[] {nx, ny, l+1});
 						visited[nx][ny] = 1;
 					}
 				}
 			}
 			
+			// 도둑이 밟은 모든 칸을 count
 			int answer = 0;
 			for (int i=0; i<N; i++) {
 				for (int j=0; j<M; j++) {
