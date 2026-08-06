@@ -43,9 +43,10 @@ public class Solution {
             pos = new ArrayDeque<>();
 
             visited[posY][posX] =true;
+                            // 위치 x, 위치 y  시간
             pos.offer(new int[] {posY,posX,1});
 
-            // 위치 x, 위치 y , 갯수, 시간
+           
             while(!pos.isEmpty()) {
 
                 int[]  cur= pos.poll();
