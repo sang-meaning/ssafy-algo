@@ -11,7 +11,7 @@ n-1번 회전하면 모든 수가 나옴 : 0번회전 ~ n-1번 회전까지
 
 */
 
-public class Solution_강상민 {
+public class Solution_5658_강상민 {
   static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
   static StringTokenizer st;
   static StringBuilder sb = new StringBuilder();
@@ -30,8 +30,8 @@ public class Solution_강상민 {
 
       // 입력 완료
 
-      Deque<Character> q = new ArrayDeque<>();
-      HashSet<String> set = new HashSet<>();
+      Deque<Character> q = new ArrayDeque<>(); // 회전시킬 원본
+      HashSet<String> set = new HashSet<>(); // 만든 전체 숫자 set
 
       for (int i=0; i<s.length(); i++) {
         q.add(s.charAt(i));
@@ -77,7 +77,7 @@ public class Solution_강상민 {
           if (temp >= 10) temp -= 7; // 10보다 큰 'A' 는 7 빼야 10진수 숫자 등장
 
           //System.out.println(temp);
-          number += (temp) * Math.pow(16, scale);
+          number += (temp) * Math.pow(16, scale); // 10진수 숫자
           scale++;
 
         }
@@ -88,11 +88,8 @@ public class Solution_강상민 {
       }
 
       arr.sort((a,b) -> Integer.compare(b,a));
-
       sb.append("#"+t+" "+arr.get(K-1)).append("\n");
       
-
-
     }
 
     // tc 완료
