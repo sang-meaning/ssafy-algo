@@ -2,7 +2,7 @@ package d4;
 import java.io.*;
 import java.util.*;
 
-public class Solution_2149_김민우 {
+public class Solution_1249_김민우 {
   static BufferedReader br;
   static StringTokenizer st;
 
