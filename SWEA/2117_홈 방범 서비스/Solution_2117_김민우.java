@@ -61,7 +61,7 @@ public class Solution_2117_김민우 {
         }
       }
       int total = home_pay - loss;
-      if(total > 0){
+      if(total >= 0){
         cnt = (tmp>cnt)?tmp:cnt;
       }
     }
