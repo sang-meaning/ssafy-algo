@@ -49,7 +49,10 @@ class Solution {
 	}
 	
 	public static void search(int size, int last, int len) {
-		// 전부 돌았으면 집으로 돌아가기
+    // 최소보다 더 길면 탐색할 필요 없음 (이거 킥이네요)
+    if (len >= mini) return;
+		
+    // 전부 돌았으면 집으로 돌아가기
 		if (size == N) {
 			int lx = customer[last] / 1000;
 			int ly = customer[last] % 1000;
