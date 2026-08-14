@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution_1247_정영훈 {
+public class Solution_1217_정영훈 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int[] arr=new int[10];
