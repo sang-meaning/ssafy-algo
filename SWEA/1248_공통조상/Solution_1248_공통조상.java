@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Solution_1248_공통조상 {
+public class Solution_1248_이윤찬 {
 
 	static int T;
 	static int V;
@@ -50,10 +50,11 @@ public class Solution_1248_공통조상 {
 			
 			}
 			
+			
+			// 공통조상의 노드를 찾는 함수 FindAncesotrNode 
 			int CommonAncestorNode = FindAncesotrNode(N1,N2);
 			
-			
-			
+			// 서브트리의 길이를 구하기 위해 BFS 수행..
 			Queue<Integer> que = new  ArrayDeque<>();
 			
 			que.offer(CommonAncestorNode);
@@ -61,7 +62,7 @@ public class Solution_1248_공통조상 {
 			while(!que.isEmpty()) {
 				
 				int sN = que.poll();
-				
+				// 노드하나 확인할때마다 카운트 증가
 				count++;
 				
 				for(int node : graph.get(sN)) {
@@ -79,19 +80,28 @@ public class Solution_1248_공통조상 {
 	}
 	
 	public static int FindAncesotrNode(int Node1 ,int Node2) {
-		
+		// 가장 가까운 공통조상을 찾기 위해서  불리언 형태의 배열 
 		boolean[] checkNode = new boolean[V+1];
 		
+		// 첫번째 노드번호 이용해서 최종 노드는 1-->0으로 마감하기 때문에 0이 아닐 때까지 돌아간다.
 		while(Node1 != 0) {
-			
+			// 첫 시작 노드부터 TRUE 처리
 			checkNode[Node1] = true;
-			
+			// Node1의 부모 대입 
 			Node1 = parent[Node1];
+			// 반복 
+		}
+		// node2를 cheknode에 넣어서 확인했을때 True이면 멈춘다... 
+		while(!checkNode[Node2]) {
+			// false일때 Node2의 값을 부모로 초기화 
+			Node2= parent[Node2];
+			
+//			if(Node2==0) {
+//				break;
+//			}
 		}
 		
-		while(!checkNode[Node2]) {
-			Node2= parent[Node2];
-		}
+		//최종 Node2의 값이 공통 조상으로 판별 리턴해준다.
 		return Node2;
 		
 		
