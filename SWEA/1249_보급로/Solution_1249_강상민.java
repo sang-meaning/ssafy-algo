@@ -1,18 +1,22 @@
 import java.io.*;
 import java.util.*;
 
+/*
+i번째 칸 i노드로 간주, i노드와 i의 상하좌우를 잇는 간선 정보 adj에 저장, 가중치는 i노드의 지도 값
+adj[i노드].add(new int[] {도착노드, 가중치})
+d[n] : 1에서 출발해서 n까지 가는데 최소 비용
+*/
+
 public class Solution_1249_강상민 {
   static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
   static StringTokenizer st;
   static StringBuilder sb = new StringBuilder();
   static ArrayList<int[]>[] adj; // 노드, 비용
-  static int[] history;
   static int[] d;
   static int T,N;
   static int INF = 0x3f3f3f3f;
   static int[] dx={1,0,-1,0};
   static int[] dy={0,1,0,-1};
-  static int[] board;
 
   public static void main(String[] args) throws IOException {
     T = Integer.parseInt(br.readLine());
@@ -23,14 +27,12 @@ public class Solution_1249_강상민 {
       // 노드 N*N개
       int nodes = N*N;
 
-      adj = new ArrayList[nodes+1];
-      d = new int[nodes+1];
-      history = new int[nodes+1];
-      board = new int[nodes+1];
+      adj = new ArrayList[nodes+1]; // 인접 노드 정보
+      d = new int[nodes+1]; // 비용 테이블
 
       for (int i=1; i<=nodes; i++) {
         adj[i] = new ArrayList<>();
-        d[i] = INF;
+        d[i] = INF; // 초기값 대략 Integer.MAX_VALUE / 2
       }
 
       int[][] num = new int[N][N];
@@ -52,8 +54,6 @@ public class Solution_1249_강상민 {
           int w = s.charAt(j) - '0';
           // history 보면서 1인 보드 개수만큼 답 빼기
 
-          board[num[i][j]] = w;
-
           // 현재 위치로부터 4방향에 연결하는 간선 생성
           for (int dir=0; dir<4; dir++) {
             int nx = i+dx[dir];
@@ -67,9 +67,7 @@ public class Solution_1249_강상민 {
             int ww = w;
 
             //System.out.println(ss+" "+ee+" "+ww);
-
             adj[ss].add(new int[] {ee, ww});
-            //adj[ee].add(new int[] {ss, ww});
 
 
           }
@@ -83,9 +81,7 @@ public class Solution_1249_강상민 {
       dijkstra(1);
 
 
-      //System.out.println(" "+ccc);
       sb.append("#"+t+" "+d[nodes]).append("\n");
-
       
     }
 
@@ -93,7 +89,9 @@ public class Solution_1249_강상민 {
     System.out.print(sb);
   }
 
+  // 다익스트라
   static void dijkstra(int startNode) {
+    // pq : {노드, 비용}, 비용에 대해 오름차순 정렬
     PriorityQueue<int[]> pq = new PriorityQueue<>((a,b) -> Integer.compare(a[1],b[1]));
     d[startNode] = 0;
     pq.add(new int[] {startNode, 0});
@@ -103,17 +101,18 @@ public class Solution_1249_강상민 {
       int curN = cur[0];
       int curW = cur[1];
 
+      // 이미 해당 노드에 대해 최소비용 갱신되었으면 패스
       if (d[curN] != curW) continue;
 
       for (int[] nxt: adj[curN]) {
         int nxtN = nxt[0];
         int nxtW = nxt[1];
 
+        // 갱신하려는 값이 기존 값보다 작지 않으면 패스
         if (d[nxtN] <= d[curN]+nxtW) continue;
         d[nxtN] = d[curN]+nxtW;
 
         pq.add(new int[] {nxtN, d[nxtN]});
-        history[nxtN] = curN;
       }
 
       
