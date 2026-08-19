@@ -183,6 +183,7 @@ class UserSolution {
   public void dijkstra(int N, int[] b, int[] d, int R) {
     PriorityQueue<int[]> pq = new PriorityQueue<>((aa,bb) -> Integer.compare(aa[0],bb[0]));
 
+		// 모든 지점을 pq의 초깃값으로 넣어주기
     for (int i=0; i<N; i++) {
       d[b[i]] = 0;
       pq.add(new int[] {0, b[i]});
