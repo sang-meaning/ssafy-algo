@@ -77,26 +77,7 @@ public class Solution_5658_정영훈 {
             Character part= password[i];
             int num=0;
             if(!Character.isDigit(part)){
-                switch(part){
-                    
-                    case 'A': num=10;
-                    break;
-                    
-                    case 'B': num=11;
-                    break;
-
-                    case 'C': num=12;
-                    break;
-
-                    case 'D': num=13;
-                    break;
-                    
-                    case 'E': num=14;
-                    break;
-                    
-                    case 'F': num=15;
-                    break;
-                }
+                num=10+part-'A';
             }else num=part-'0';
             
             sum+=num*(int)Math.pow(16, pow);
