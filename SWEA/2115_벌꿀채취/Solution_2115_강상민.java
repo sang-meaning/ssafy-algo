@@ -99,30 +99,17 @@ public class Solution_2115_강상민 {
   }
 
   // plus : 꿀들의 합, power : 꿀의 제곱의 합
-  static boolean dfs(int depth, int plus, int power, int[] arr) {
-    if (depth == M+1) { 
-      return true;
+  static void dfs(int depth, int plus, int power, int[] arr) {
+    if (plus > C) return; // 더 볼 필요없이 백
+
+    if (depth == M) {  // 종료조건
+      temp = Math.max(temp, power);
+      return;
     }
 
-    for (int i=0; i<M; i++) {
-      if (vis[i]) continue;
+    dfs(depth+1, plus+arr[depth], power+(arr[depth] * arr[depth]), arr);
 
-      int nxtPlus = plus + arr[i];
-      if (nxtPlus > C) return false; // 꿀 합 > C 이면, 그 위치에서 깊이탐색 종료
-
-      int nxtPower = power + arr[i] * arr[i];
-
-      temp = Math.max(temp, nxtPower);
-      vis[i] = true;
-
-      if (dfs(depth+1, nxtPlus, nxtPower, arr)); // return false 면 깊이 탐색 종료
-
-      vis[i] = false; // 백트래킹
-    }
-
-    // 다음 깊이도 볼 것이므로 true
-    return true;
-
+    dfs(depth+1, plus, power, arr);
   }
   
 }
