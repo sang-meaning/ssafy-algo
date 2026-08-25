@@ -28,30 +28,29 @@ class Solution {
 				}
 			}
 
-			int answer = 0;
-			// 가로 검사
-			for (int i=0; i<N; i++) {
+			int answer = 0;			
+			for (int i=0; i<N; i++) {                             // 가로 검사
 				boolean can = true;
 				boolean[] visited = new boolean[N];
-				for (int j=0; j<N-1; j++) {								// 왼쪽에서 오른쪽 쓸기
-					if (arr[i][j] == arr[i][j+1]) continue; 			// 다음 칸과 같으면 통과
-					if (arr[i][j] >= arr[i][j+1] + 2) {					// 다음 칸과 2칸 이상 차이나면 불가능
+				for (int j=0; j<N-1; j++) {								          // 왼쪽에서 오른쪽 쓸기
+					if (arr[i][j] == arr[i][j+1]) continue; 		      // 다음 칸과 같으면 통과
+					if (arr[i][j] >= arr[i][j+1] + 2) {					      // 다음 칸과 2칸 이상 차이나면 불가능
 						can = false;
 						break;
 					}
-					if (arr[i][j] < arr[i][j+1]) continue;				// 반대 경우는 무시
+					if (arr[i][j] < arr[i][j+1]) continue;				    // 반대 경우는 무시
 					
-					for (int d=2; d<=X; d++) {							// 다음 칸과 1칸 차이만 났을 때,
+					for (int d=2; d<=X; d++) {							          // 다음 칸과 1칸 차이만 났을 때,
 						if (j+d >= N || arr[i][j] - arr[i][j+d] != 1) { // 활주로를 넘어가지 않으면서, X칸 뒤까지 전부 1 차이나는지 확인
 							can = false;
 							break;
 						}
 					}
 					if (!can) break;
-					for (int d=1; d<=X; d++) visited[j+d] = true;		// 경사로 표시
+					for (int d=1; d<=X; d++) visited[j+d] = true;		  // 경사로 표시
 				}
 				
-				for (int j=N-1; j>0; j--) {								// 오른쪽에서 왼쪽 쓸기
+				for (int j=N-1; j>0; j--) {								          // 오른쪽에서 왼쪽 쓸기
 					if (arr[i][j] == arr[i][j-1]) continue;
 					if (arr[i][j] >= arr[i][j-1] + 2) {
 						can = false;
@@ -59,7 +58,7 @@ class Solution {
 					}
 					if (arr[i][j] < arr[i][j-1]) continue;
 					
-					for (int d=2; d<=X; d++) {							// 활주로 넘어가지 않으면서, 전부 1차이남과 동시에, 위에서 깔린건 없는지
+					for (int d=2; d<=X; d++) {							           // 활주로 넘어가지 않으면서, 전부 1차이남과 동시에, 위에서 깔린건 없는지
 						if (j-d < 0 || arr[i][j] - arr[i][j-d] != 1 || visited[j-d]) {
 							can = false;
 							break;
@@ -71,28 +70,28 @@ class Solution {
 				if (can) answer++;
 			}
 			
-			for (int j=0; j<N; j++) {
+			for (int j=0; j<N; j++) {                             // 세로 검사
 				boolean can = true;
 				boolean[] visited = new boolean[N];
-				for (int i=0; i<N-1; i++) {								// 왼쪽에서 오른쪽 쓸기
-					if (arr[i][j] == arr[i+1][j]) continue; 			// 다음 칸과 같으면 통과
-					if (arr[i][j] >= arr[i+1][j] + 2) {					// 다음 칸과 2칸 이상 차이나면 불가능
+				for (int i=0; i<N-1; i++) {								          // 위에서 아래로 쓸기
+					if (arr[i][j] == arr[i+1][j]) continue; 			    // 다음 칸과 같으면 통과
+					if (arr[i][j] >= arr[i+1][j] + 2) {					      // 다음 칸과 2칸 이상 차이나면 불가능
 						can = false;
 						break;
 					}
 					if (arr[i][j] < arr[i+1][j]) continue;
 					
-					for (int d=2; d<=X; d++) {							// 다음 칸과 1칸 차이만 났을 때,
+					for (int d=2; d<=X; d++) {							          // 다음 칸과 1칸 차이만 났을 때,
 						if (i+d >= N || arr[i][j] - arr[i+d][j] != 1) { // 활주로를 넘어가지 않으면서, X칸 뒤까지 전부 1 차이나는지 확인
 							can = false;
 							break;
 						}
 					}
 					if (!can) break;
-					for (int d=1; d<=X; d++) visited[i+d] = true;		// 경사로 표시
+					for (int d=1; d<=X; d++) visited[i+d] = true;		  // 경사로 표시
 				}
 				
-				for (int i=N-1; i>0; i--) {								// 오른쪽에서 왼쪽 쓸기
+				for (int i=N-1; i>0; i--) {								          // 아래에서 위로 쓸기
 					if (arr[i][j] == arr[i-1][j]) continue;
 					if (arr[i][j] >= arr[i-1][j] + 2) {
 						can = false;
@@ -100,7 +99,7 @@ class Solution {
 					}
 					if (arr[i][j] < arr[i-1][j]) continue;
 					
-					for (int d=2; d<=X; d++) {							// 활주로 넘어가지 않으면서, 전부 1차이남과 동시에, 위에서 깔린건 없는지
+					for (int d=2; d<=X; d++) {							          // 활주로 넘어가지 않으면서, 전부 1차이남과 동시에, 위에서 깔린건 없는지
 						if (i-d < 0 || arr[i][j] - arr[i-d][j] != 1 || visited[i-d]) {
 							can = false;
 							break;
