@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.math.BigInteger;
 
-public class swea3260 {
+public class Solution {
 	public static StringTokenizer st;
 	public static StringBuilder sb;
 	public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
