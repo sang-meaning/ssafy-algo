@@ -64,3 +64,25 @@
 - 각 일자별로 알고리즘 문제가 제시됩니다. 
 - 제시되는 문제들은 주로 SWEA, 프로그래머스의 문제입니다. 
 - 진도와 관련 된 문제 최소 1문제를 포함하여 다른 유형의 문제가 제시될 수 있습니다.
+
+ --------------------
+ <<9/1(화)>>
+ --------------------
+
+<**실습**>
+- 스택/큐를 단계별로 진행해봅시다.
+
+[기본]
+- 프로그래머스 : 같은 숫자는 싫어(https://school.programmers.co.kr/learn/courses/30/lessons/12906)
+- :warning: 프로그래머스 : 올바른 괄호(https://school.programmers.co.kr/learn/courses/30/lessons/12909)
+- :warning: 프로그래머스 : 기능개발(https://school.programmers.co.kr/learn/courses/30/lessons/42586)
+
+[조금 응용]
+- 프로그래머스 : 크레인 인형뽑기 게임(https://school.programmers.co.kr/learn/courses/30/lessons/64061)
+- :warning: 프로그래머스 : 다리를 지나는 트럭(https://school.programmers.co.kr/learn/courses/30/lessons/42583)
+
+[응용]
+- 프로그래머스 : 주식가격(https://school.programmers.co.kr/learn/courses/30/lessons/42584)
+
+<**과제(필수)**>
+- :warning: SWEA 3499 퍼펙트셔플 (Solution_3499_이름.java)
