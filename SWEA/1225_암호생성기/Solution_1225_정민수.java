@@ -50,9 +50,6 @@ class Solution_1225_정민수
 		   표준입력 System.in 으로부터 스캐너를 만들어 데이터를 읽어옵니다.
 		 */
         Scanner sc = new Scanner(System.in);
-		/*
-		   여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
-		*/
 
         for(int test_case = 1; test_case <= 10; test_case++)
         {
