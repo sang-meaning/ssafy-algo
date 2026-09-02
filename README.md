@@ -86,3 +86,27 @@
 
 <**과제(필수)**>
 - :warning: SWEA 3499 퍼펙트셔플 (Solution_3499_이름.java)
+
+ --------------------
+ <<9/2(수)>>
+ --------------------
+
+<**실습**>
+- :warning: SWEA 1233 사칙연산유효성검사 (Solution_1233_이름.java)
+
+<**추가 실습**>
+- 투 포인터와 슬라이딩 윈도우의 개념을 조금 더 학습해봅시다.
+[기본]
+- :warning: 프로그래머스 : 연속 부분 수열 합의 개수(https://school.programmers.co.kr/learn/courses/30/lessons/131701)
+- 프로그래머스 : 구명보트(https://school.programmers.co.kr/learn/courses/30/lessons/42885)
+- 프로그래머스 : 할인 행사(https://school.programmers.co.kr/learn/courses/30/lessons/131127)
+
+[조금 응용]
+- 프로그래머스 : 카드 뭉치(https://school.programmers.co.kr/learn/courses/30/lessons/159994)
+
+[응용]
+- 프로그래머스 : 연속된 부분 수열의 합(https://school.programmers.co.kr/learn/courses/30/lessons/178870)
+- 프로그래머스 : 두 큐 합 같게 만들기(https://school.programmers.co.kr/learn/courses/30/lessons/118667)
+
+<**과제(필수)**>
+- :warning: SWEA 1226 미로1 (Solution_1226_이름.java)
