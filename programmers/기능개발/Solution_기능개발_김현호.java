@@ -8,8 +8,6 @@ class Solution {
         int count = 0;
         for(int i = 0; i < progresses.length; i++){
             pro_q.offer(progresses[i]);
-        }
-        for(int i = 0; i < speeds.length; i++){
             pro_s.offer(speeds[i]);
         }
         while(!pro_q.isEmpty()){
