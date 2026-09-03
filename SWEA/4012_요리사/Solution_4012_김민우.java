@@ -42,8 +42,6 @@ public class Solution_4012_김민우 {
     //A음식이 사용하는 재료 개수(=cnt)가 N/2일 때
     //각 음식의 시너지 및 차이 계산 => 이후 최소값 갱신
     if(cnt == N/2){
-      System.out.println(listA);
-      System.out.println(listB);
       int foodA = cook(listA);
       int foodB = cook(listB);
       int diff = Math.abs(foodA-foodB);
