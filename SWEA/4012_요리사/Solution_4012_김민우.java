@@ -34,7 +34,7 @@ public class Solution_4012_김민우 {
       min = Integer.MAX_VALUE;
 
       dfs(-1, 0);
-      System.out.printf("#%d %d", test_case, min);
+      System.out.printf("#%d %d\n", test_case, min);
     }//test_case 끝
   }//main 끝
 
