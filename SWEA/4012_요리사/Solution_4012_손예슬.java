@@ -37,7 +37,7 @@ public class S4012 {
             return Math.min(diff(isA), minDiff);
         }
         // 다음거
-        for(int i = n+1; i <= (N-1)/2; i++){
+        for(int i = n+1; i < N; i++){
             if(i < N && isA[i] == 0){
                 isA[i] = 1;
                 minDiff = dfs(i, dept + 1);
