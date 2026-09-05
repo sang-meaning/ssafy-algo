@@ -34,8 +34,6 @@ public class S4012 {
     // A 조합 만드는 재귀
     public static int dfs(int n, int dept) {
         if(dept == (N-1)/2){
-            // System.out.println(diff(isA));
-            // minDiff = Math.min(diff(isA), minDiff);
             return Math.min(diff(isA), minDiff);
         }
         // 다음거
