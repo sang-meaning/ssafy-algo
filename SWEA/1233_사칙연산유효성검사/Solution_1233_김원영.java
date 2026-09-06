@@ -1,46 +1,48 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Solution {
-	static int max_sum = -1;
-	//answer 다시 돌려놓기
-	static List<Integer> array = new ArrayList<>();
-	static void backtracking(int start,int n, int limit_weight,int[] nums) {
-		if(array.size() == 2) {
-			int combination_sum=0;
-			for(int i=0; i<2; i++) {
-				combination_sum += array.get(i);
-			}
-			if ((combination_sum <= limit_weight) && (combination_sum > max_sum)) {
-				max_sum = combination_sum;
-			}
+
+	static String[] array;
+	static int n;
+	static int answer;
+
+	static void dfs(int cur) {
+		if(cur > n) {
 			return;
 		}
-					
-		for (int i=start;i < n; i++ ) {
-			array.add(nums[i]);
-		backtracking(i+1, n ,limit_weight,nums);
-			array.remove(array.size()-1);
-		}
-					
-	}
-	public static void main(String[] args) throws FileNotFoundException {
-		Scanner sc = new Scanner(System.in);
-		int T = sc.nextInt();
-		for(int tc=1; tc<= T; tc++) {
-			int snack_num = sc.nextInt();
-			int limiit_weight = sc.nextInt();
-			int[] snack = new int[snack_num];
-			for(int i=0; i<snack_num;i++) {
-				snack[i]=sc.nextInt();
+		dfs(cur*2);
+		char temp = array[cur].charAt(0);
+
+		if(cur*2 <= n) {
+			if(!(temp=='+' || temp=='-' || temp=='*' || temp=='/')) {
+				answer = 0;
 			}
-			backtracking(0, snack_num, limiit_weight, snack);
-			System.out.println("#"+tc+" "+max_sum);
-			max_sum =-1;
+		}else {
+			if(temp=='+' || temp=='-' || temp=='*' || temp=='/') {
+				answer = 0;
+			}
 		}
-		
+        
+		dfs(cur*2+1);
+	}
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		for(int tc=1; tc<=10; tc++) {
+			n = Integer.parseInt(sc.nextLine());
+			array = new String[n+1];
+			answer = 1;
+
+			for(int i=0; i<n; i++) {
+				String line = sc.nextLine();
+				String[] temp = line.split(" ");
+				int num = Integer.parseInt(temp[0]);
+				array[num] = temp[1];
+			}
+			dfs(1);
+			System.out.println("#"+tc+" "+answer);
+		}
 	}
 }
