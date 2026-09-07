@@ -1,6 +1,6 @@
 
 import java.util.*;
-class Solution_연속부분수열합개수_정영훈{
+class Solution_연속부분수열합의개수_정영훈{
     public int solution(int[] elements) {
         int answer = 0;
         int length = elements.length;
