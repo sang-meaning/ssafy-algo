@@ -37,28 +37,17 @@ public class Solution {
 
     static void dfs(int index, int scoreSum, int calorieSum) {
 
-
         if (calorieSum > L) {
             return;
         }
-
 
         if (index == N) {
             max = Math.max(max, scoreSum);
             return;
         }
 
+        dfs(index + 1, scoreSum + score[index], calorieSum + calorie[index]);
 
-        dfs(
-            index + 1,
-            scoreSum + score[index],
-            calorieSum + calorie[index]
-        );
-
-        dfs(
-            index + 1,
-            scoreSum,
-            calorieSum
-        );
+        dfs(index + 1, scoreSum, calorieSum);
     }
 }
