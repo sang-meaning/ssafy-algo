@@ -110,3 +110,37 @@
 
 <**과제(필수)**>
 - :warning: SWEA 1226 미로1 (Solution_1226_이름.java)
+
+
+ --------------------
+ <<9/3(목)>>
+ --------------------
+<**실습**>
+:warning: SWEA 4012. [모의 SW 역량테스트] 요리사 (Solution_4012_이름.java)
+SWEA 26944. 이삿짐 상자 나르기 (Solution_26944_이름.java)
+
+<**추가 실습**>
+BFS/DFS의 등장.
+[기본]
+
+:warning: 프로그래머스 : 타겟 넘버(https://school.programmers.co.kr/learn/courses/30/lessons/43165)
+프로그래머스 : 게임 맵 최단거리(https://school.programmers.co.kr/learn/courses/30/lessons/1844)
+[응용]
+
+프로그래머스 : 무인도 여행(https://school.programmers.co.kr/learn/courses/30/lessons/154540)
+프로그래머스 : 미로 탈출 (https://school.programmers.co.kr/learn/courses/30/lessons/159993)
+<**과제(필수)**>
+:warning: SWEA 9229 한빈이와 SpotMart (Solution_9229_이름.java)
+ 
+ --------------------
+ <<9/7(월)>>
+ --------------------
+
+<**실습**>
+순열, 조합, 부분집합은 베이스 코드를 꼭 익혀주세요.
+:warning: SWEA 5215. 햄버거 다이어트 (Solution_5215_이름.java)
+:warning: SWEA 1873. 상호의 배틀필드 : 내일 라이브 문제 풀이 (Solution_1873_이름.java)
+SWEA 8275. 햄스터
+
+<**과제(필수)**>
+:warning: SWEA 6808. 규영이와 인영이의 카드 게임 : 내일 라이브 문제 풀이 (Solution_9229_이름.java)
