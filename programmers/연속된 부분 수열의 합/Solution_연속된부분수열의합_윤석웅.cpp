@@ -23,6 +23,9 @@ vector<int> solution(vector<int> sequence, int k) {
             answer.push_back(start);
             answer.push_back(end-1);
         } else{
+            if (end == len){
+                break;
+            }
             temp += sequence[end];
             end += 1;
         }
