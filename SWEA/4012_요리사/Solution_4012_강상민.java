@@ -7,7 +7,7 @@ N combination N/2
 
 */
 
-public class Solution_4128_강상민 {
+public class Solution_4012_강상민 {
   static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
   static StringTokenizer st;
   static StringBuilder sb = new StringBuilder();
