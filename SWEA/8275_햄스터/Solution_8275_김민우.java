@@ -33,11 +33,8 @@ public class Solution_8275_김민우 {
 			max = -1;
 			answer = new int[N];
 			
-			
-			for(int i = 0; i < M; i++) {
-				int[] arr = new int[N];
-				dfs(0, arr);
-			}
+			int[] arr = new int[N];
+			dfs(0, arr);
 			
 			System.out.printf("#%d ", test_case);
 			if(max == -1)
