@@ -20,7 +20,11 @@ class Solution {
 
         dfs(0);
 
-        return answer > d ? -1 : answer;
+        if(answer > d){
+            answer = -1;
+        }
+
+        return answer;
     }
 
     static void dfs(int depth) {
