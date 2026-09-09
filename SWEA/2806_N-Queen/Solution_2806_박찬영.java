@@ -26,7 +26,6 @@ public class Solution {
 		static void setQueen(int row) {
 			
 			if(row > N) {
-				// 유망할때만 계속 트리를 탐색해서 왔는데 기저조건이면 주모건 답
 				++cnt;
 				return;
 			}
