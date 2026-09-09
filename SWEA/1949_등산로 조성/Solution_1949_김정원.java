@@ -9,6 +9,7 @@ public class Solution_1949_김정원 {
 	static boolean[][] visited;
 	static List<int[]> startLoc;
 	
+	
 	static int[] dx;
 	static int[] dy;
 	public static void main(String[] args) throws Exception {
