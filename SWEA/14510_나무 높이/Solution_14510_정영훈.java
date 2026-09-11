@@ -35,32 +35,32 @@ public class Solution_14510_정영훈
             
            }
            int odd=0;
-           int fair=0;
+           int pair=0;
            for (int i = 0; i < n; i++) {
                 int diff=maxTree-trees[i];
-                fair+=diff/2;
+                pair+=diff/2;
                 odd+=diff%2;
             
            }
-           while(fair-odd>=2){
-                fair-=1;
+           while(pair-odd>=2){
+                pair-=1;
                 odd+=2;
                 
 
            }
-            int sum=Math.min(fair, odd);
+            int sum=Math.min(pair, odd);
             sum*=2;
 
-           if(odd>fair){
-            int temp=odd-fair;
-            if(odd-fair==1){
+           if(odd>pair){
+            int temp=odd-pair;
+            if(odd-pair==1){
                 sum+=temp;
-            }else if(odd-fair>1){
+            }else if(odd-pair>1){
                 sum+=1;
                 sum+=(temp-1)*2;
             }
-           }else if(fair>odd){
-                sum+=(fair-odd)*2;
+           }else if(pair>odd){
+                sum+=(pair-odd)*2;
            }
            
            
