@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -59,14 +58,18 @@ public class Solution {
             int totalCharge = 0;
 
             for (int time = 0; time <= M; time++) {
-                ax += dx[pathA[time]];
-                ay += dy[pathA[time]];
-                bx += dx[pathB[time]];
-                by += dy[pathB[time]];
+                // time > 0 일 때만 실제로 이동
+                if (time > 0) {
+                    ax += dx[pathA[time]];
+                    ay += dy[pathA[time]];
+                    bx += dx[pathB[time]];
+                    by += dy[pathB[time]];
+                }
 
                 List<Integer> listA = new ArrayList<>();
                 List<Integer> listB = new ArrayList<>();
 
+                // 현재 위치에서 접근 가능한 BC 탐색
                 for (int i = 0; i < A; i++) {
                     if (Math.abs(ax - bcs[i].x) + Math.abs(ay - bcs[i].y) <= bcs[i].c) {
                         listA.add(i);
@@ -91,12 +94,7 @@ public class Solution {
                 } else {
                     for (int aIdx : listA) {
                         for (int bIdx : listB) {
-                            int sum = 0;
-                            if (aIdx == bIdx) {
-                                sum = bcs[aIdx].p;
-                            } else {
-                                sum = bcs[aIdx].p + bcs[bIdx].p;
-                            }
+                            int sum = (aIdx == bIdx) ? bcs[aIdx].p : bcs[aIdx].p + bcs[bIdx].p;
                             maxCharge = Math.max(maxCharge, sum);
                         }
                     }
