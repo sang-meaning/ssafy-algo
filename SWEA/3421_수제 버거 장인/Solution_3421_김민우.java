@@ -1,73 +1,79 @@
 import java.util.*;
 import java.io.*;
 
-
 public class Solution_3421_김민우 {
 
 	static int T, N, M;
-	static Set<List<Integer>> burger;
-	static List<List<Integer>> forbid;
-	public static void main(String[] args) throws Exception{
+	static List<Integer>[] forbid;
+	static boolean[] selected;
+	static int answer;
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
+		StringBuilder sb = new StringBuilder();
 		
 		T = Integer.parseInt(st.nextToken());
+		
 		for(int test_case = 1; test_case <= T; test_case++) {
 			st = new StringTokenizer(br.readLine());
 			N = Integer.parseInt(st.nextToken());
 			M = Integer.parseInt(st.nextToken());
 			
-			burger = new HashSet<>();
-			List<Integer> init = new ArrayList<>();
-            burger.add(init);
-			//burger.add(Arrays.asList());
-			forbid = new ArrayList<>(N+1);
-			for(int i = 0; i <= N; i++) {
-				forbid.add(i, new ArrayList<>());
-			}
 			if(M == 0) {
-				System.out.printf("#%d %d\n", test_case, (int)Math.pow(2, N));
+				answer = (int)Math.pow(2, N);
+				sb.append("#"+test_case+" "+answer+"\n");
 				continue;
 			}
+			
+			forbid = new ArrayList[N+1];
+			for(int i = 1; i <= N; i++) {
+				forbid[i] = new ArrayList<>();
+			}
+			selected = new boolean[N+1];
+			
 			
 			for(int i = 0; i < M; i++) {
 				st = new StringTokenizer(br.readLine());
 				int fst = Integer.parseInt(st.nextToken());
 				int scd = Integer.parseInt(st.nextToken());
-				List<Integer> tmp1 = new ArrayList<>();
-				tmp1.addAll(forbid.get(fst));
-				tmp1.add(scd);
-				List<Integer> tmp2 = new ArrayList<>();
-				tmp2.addAll(forbid.get(scd));
-				tmp2.add(fst);
-				forbid.set(fst, tmp1);
-				forbid.set(scd, tmp2);
+				
+				forbid[fst].add(scd);
+				forbid[scd].add(fst);
 			}
-			
+			answer = 0;
+			makeBurger(0);
+			sb.append("#"+test_case+" "+answer+"\n");
+		}//test_case
+		System.out.println(sb);
+	}//main
+
+	public static void makeBurger(int cnt) {
+		if(cnt == N) {
+			boolean flag = true;
+			//현재 햄버거에 들어가 있는 재료 i에 대하여
 			for(int i = 1; i <= N; i++) {
-				Set<List<Integer>> tmpSet = new HashSet<>();
-				for(List<Integer> b : burger) {
-					boolean flag = true;
-					for(int ingred : b) {
-						if(forbid.get(ingred).contains(i)) {
-							flag = false;
-							break;
-						}
+				if(!selected[i])
+					continue;
+				//금지 재료 j가 같이 들어가 있는가?
+				for(int j : forbid[i]) {
+					if(selected[j]) {
+						flag = false;
+						break;
 					}
-					if(!flag)
-						continue;
-					List<Integer> tmp = new ArrayList<>();
-					tmp.addAll(b);
-					tmp.add(i);
-					tmpSet.add(tmp);
 				}
-				burger.addAll(tmpSet);
+				//flag == false => 즉, 만들어질 수 없는 버거면 return
+				if(!flag)
+					return;
 			}
-
-			System.out.println(forbid);
-			System.out.printf("#%d %d\n", test_case, burger.size());
-		}//test_case 끝
+			//모든 for문을 돌았다면, 만들어질 수 있는 햄버거이므로 answer++
+			answer++;
+			return;
+		}//if문 끝
+		
+		selected[cnt+1] = true;
+		makeBurger(cnt+1);
+		selected[cnt+1] = false;
+		makeBurger(cnt+1);
 	}
-
 }
