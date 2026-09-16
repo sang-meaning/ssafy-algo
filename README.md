@@ -116,31 +116,121 @@
  <<9/3(목)>>
  --------------------
 <**실습**>
-:warning: SWEA 4012. [모의 SW 역량테스트] 요리사 (Solution_4012_이름.java)
-SWEA 26944. 이삿짐 상자 나르기 (Solution_26944_이름.java)
+- :warning: SWEA 4012. [모의 SW 역량테스트] 요리사 (Solution_4012_이름.java)
+- SWEA 26944. 이삿짐 상자 나르기 (Solution_26944_이름.java)
 
 <**추가 실습**>
-BFS/DFS의 등장.
+- BFS/DFS의 등장.
+
 [기본]
+- :warning: 프로그래머스 : 타겟 넘버(https://school.programmers.co.kr/learn/courses/30/lessons/43165)
+- 프로그래머스 : 게임 맵 최단거리(https://school.programmers.co.kr/learn/courses/30/lessons/1844)
 
-:warning: 프로그래머스 : 타겟 넘버(https://school.programmers.co.kr/learn/courses/30/lessons/43165)
-프로그래머스 : 게임 맵 최단거리(https://school.programmers.co.kr/learn/courses/30/lessons/1844)
 [응용]
+- 프로그래머스 : 무인도 여행(https://school.programmers.co.kr/learn/courses/30/lessons/154540)
+- 프로그래머스 : 미로 탈출 (https://school.programmers.co.kr/learn/courses/30/lessons/159993)
 
-프로그래머스 : 무인도 여행(https://school.programmers.co.kr/learn/courses/30/lessons/154540)
-프로그래머스 : 미로 탈출 (https://school.programmers.co.kr/learn/courses/30/lessons/159993)
 <**과제(필수)**>
-:warning: SWEA 9229 한빈이와 SpotMart (Solution_9229_이름.java)
+- :warning: SWEA 9229 한빈이와 SpotMart (Solution_9229_이름.java)
  
  --------------------
  <<9/7(월)>>
  --------------------
 
 <**실습**>
-순열, 조합, 부분집합은 베이스 코드를 꼭 익혀주세요.
-:warning: SWEA 5215. 햄버거 다이어트 (Solution_5215_이름.java)
-:warning: SWEA 1873. 상호의 배틀필드 : 내일 라이브 문제 풀이 (Solution_1873_이름.java)
-SWEA 8275. 햄스터
+- 순열, 조합, 부분집합은 베이스 코드를 꼭 익혀주세요.
+- :warning: SWEA 5215. 햄버거 다이어트 (Solution_5215_이름.java)
+- :warning: SWEA 1873. 상호의 배틀필드 : 내일 라이브 문제 풀이 (Solution_1873_이름.java)
+- SWEA 8275. 햄스터
 
 <**과제(필수)**>
-:warning: SWEA 6808. 규영이와 인영이의 카드 게임 : 내일 라이브 문제 풀이 (Solution_9229_이름.java)
+- :warning: SWEA 6808. 규영이와 인영이의 카드 게임 : 내일 라이브 문제 풀이 (Solution_9229_이름.java)
+
+ 
+ --------------------
+ <<9/8(화)>>
+ --------------------
+
+<**실습**>
+- 오늘의 필수 문제는 조금 어려울 수도 있어요.
+[기본]
+- 프로그래머스 : 삼총사 (https://school.programmers.co.kr/learn/courses/30/lessons/131705)
+
+[조금 응용]
+- 프로그래머스 : 단체사진 찍기 (https://school.programmers.co.kr/learn/courses/30/lessons/1835)
+
+[응용]
+- :warning: SWEA 2112. [모의 SW 역량테스트] 보호 필름 (Solution_2112_이름.java)
+- :warning: 프로그래머스 : 외벽 점검 (https://school.programmers.co.kr/learn/courses/30/lessons/60062)
+
+<**과제(필수)**>
+- :warning: SWEA 3421. 수제 버거 장인 (Solution_3421_이름.java)
+ 
+ --------------------
+ <<9/9(수)>>
+ --------------------
+
+ <**실습**>
+- :warning: SWEA 2806. Nqueen (Solution_2806_이름.java)
+- SWEA 1952. 수영장 [백트래킹] (Solution_1952_이름.java)
+
+[응용]
+- :warning: SWEA 1949. [모의 SW 역량테스트] 등산로 조성 (Solution_1949_이름.java)
+
+<**과제(필수)**>
+- :warning: SWEA 1767. 프로세서 연결하기: 라이브 풀이(Solution_1767_이름.java)
+ 
+ --------------------
+ <<9/10(목)>>
+ --------------------
+
+<**실습**>
+- SWEA 2805. 농작물 수확하기 (Solution_2805_이름.java)
+- SWEA 4796. 의석이의 우뚝 선 산 (Solution_4796_이름.java)
+
+<**과제(필수)**>
+- :warning: SWEA 1486. 장훈이의 높은 선반(Solution_1486_이름.java)
+ 
+ --------------------
+ <<9/11(금)>>
+ --------------------
+<**실습**>
+- :warning: SWEA 5644. 무선 충전 (Solution_5644_이름.java)
+- :warning: SWEA 14510. 나무 높이 (Solution_14510_이름.java)
+
+<**과제(필수)**>
+- :warning: SWEA 7206 숫자게임(Solution_7206_이름.java)
+
+ --------------------
+ <<9/15(화)>>
+ --------------------
+
+<**과제(필수)**>
+- :warning: SWEA 1868. 파핑파핑 지뢰찾기 (Solution_1868_이름.java)
+
+ --------------------
+ <<9/16(수)>>
+ --------------------
+
+ <**실습**>
+- :warning: SWEA 1267. 작업 순서 (Solution_1267_이름.java)
+- :warning: SWEA 7733. 치즈 도둑 (Solution_7733_이름.java)
+- SWEA 2105. 디저트 카페 (Solution_2105_이름.java)
+<**추가 실습**>
+- 알고리즘 상관 없이 응용 정도에 따라서 문제를 구성하였습니다.
+
+[기본]
+- :warning: 프로그래머스 : 네트워크 (https://school.programmers.co.kr/learn/courses/30/lessons/43162)
+
+[조금 응용]
+- 프로그래머스 : 리코쳇 로봇 (https://school.programmers.co.kr/learn/courses/30/lessons/169199?utm_source=gemini)
+
+[응용]
+- 프로그래머스 : 퍼즐 조각 채우기 (https://school.programmers.co.kr/learn/courses/30/lessons/84021?utm_source=gemini)
+
+<**과제(필수)**>
+- :warning: SWEA 1227. 미로 2 (Solution_1227_이름.java)
+
+ --------------------
+ <<9/17(목)>>
+ --------------------
