@@ -64,9 +64,7 @@ public class Solution {
             for (int x = 0; x < N; x++) {
                 for (int y = 0; y < N; y++) {
 
-                    if (map[x][y] == '.'
-                            && mineCount[x][y] == 0
-                            && !visited[x][y]) {
+                    if (map[x][y] == '.' && mineCount[x][y] == 0 && !visited[x][y]) {
 
                         answer++;
                         dfs(x, y);
@@ -77,8 +75,7 @@ public class Solution {
             for (int x = 0; x < N; x++) {
                 for (int y = 0; y < N; y++) {
 
-                    if (map[x][y] == '.'
-                            && !visited[x][y]) {
+                    if (map[x][y] == '.' && !visited[x][y]) {
 
                         answer++;
                     }
