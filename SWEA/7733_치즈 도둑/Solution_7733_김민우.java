@@ -6,7 +6,7 @@ public class Solution_7733_김민우 {
 	static int[][] cheese;
 	static boolean[][] check;
 	static int T, N;
-	static int size, max;
+	static int max;
 	static int delta[][] = new int[][] {{0,-1},{-1,0},{0,1},{1,0}};
 	
 	public static void main(String[] args) throws Exception {
