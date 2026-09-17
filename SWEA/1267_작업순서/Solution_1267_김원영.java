@@ -1,4 +1,3 @@
-package practice;
 import java.io.FileNotFoundException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
