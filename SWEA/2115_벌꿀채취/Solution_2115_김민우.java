@@ -35,7 +35,7 @@ public class Solution_2115_김민우 {
 			
 			for(int i = 0; i < N; i++) {
 				for(int j = 0; j <= N-M; j++) {
-					honeySum[i][j] = checkC(i, j);
+					honeySum[i][j] = calMax(i, j);
 				}
 			}
 			
@@ -54,7 +54,7 @@ public class Solution_2115_김민우 {
 		System.out.print(sb);
 	}
 
-	public static int checkC(int r, int c) {
+	public static int calMax(int r, int c) {
 
 		int max = 0;
 		
