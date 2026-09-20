@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Solution_5648_이름 {
+public class Solution {
 
     static class Atom {
         int x, y, dir, e;
