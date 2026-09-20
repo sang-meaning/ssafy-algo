@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Solution_2115_이름 {
+public class Solution {
 
     static int N, M, C;
     static int[][] map, profit;
