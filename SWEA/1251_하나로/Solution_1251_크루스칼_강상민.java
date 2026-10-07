@@ -37,14 +37,16 @@ public class Solution {
                 }
             }
 
+            E = Double.parseDouble(br.readLine());
+
             int iter = 0;
             for (int i=0; i<N-1; i++) {
                 for (int j=i+1; j<N; j++) {
-                    int x1 = board[0][i];
-                    int y1 = board[1][j];
+                    long x1 = board[0][i];
+                    long y1 = board[1][i];
 
-                    int x2 = board[0][j];
-                    int y2 = board[1][j];
+                    long x2 = board[0][j];
+                    long y2 = board[1][j];
 
                     long v = (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1);
 
@@ -69,7 +71,7 @@ public class Solution {
                 if (count == N-1) break;
             }
 
-            sb.append("#"+t+" "+sum*E).append("\n");
+            sb.append("#"+t+" "+Math.round(sum*E)).append("\n");
 
 
 
