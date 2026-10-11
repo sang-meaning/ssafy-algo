@@ -1,0 +1,87 @@
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.util.Arrays;
+
+public class Solution_1251_프림_이름 {
+    public static void main(String[] args) throws Exception {
+        FastScanner fs = new FastScanner();
+        StringBuilder output = new StringBuilder();
+        int T = fs.nextInt();
+
+        for (int tc = 1; tc <= T; tc++) {
+            int n = fs.nextInt();
+            long[] x = new long[n];
+            long[] y = new long[n];
+            for (int i = 0; i < n; i++) x[i] = fs.nextInt();
+            for (int i = 0; i < n; i++) y[i] = fs.nextInt();
+            double E = Double.parseDouble(fs.next());
+
+            boolean[] visited = new boolean[n];
+            // minEdge[v]: 현재 MST와 v를 연결하는 가장 짧은 간선의 거리 제곱
+            long[] minEdge = new long[n];
+            Arrays.fill(minEdge, Long.MAX_VALUE);
+            minEdge[0] = 0;
+
+            long sum = 0;
+            for (int count = 0; count < n; count++) {
+                int current = -1;
+                long minimum = Long.MAX_VALUE;
+                for (int v = 0; v < n; v++) {
+                    if (!visited[v] && minEdge[v] < minimum) {
+                        minimum = minEdge[v];
+                        current = v;
+                    }
+                }
+
+                visited[current] = true;
+                sum += minimum;
+
+                for (int next = 0; next < n; next++) {
+                    if (visited[next]) continue;
+                    long dx = x[current] - x[next];
+                    long dy = y[current] - y[next];
+                    long weight = dx * dx + dy * dy;
+                    // 다익스트라와 달리 누적 거리 없이 간선 하나의 비용을 비교한다.
+                    if (weight < minEdge[next]) minEdge[next] = weight;
+                }
+            }
+
+            long answer = Math.round(sum * E);
+            output.append('#').append(tc).append(' ').append(answer).append('\n');
+        }
+        System.out.print(output);
+    }
+
+    static class FastScanner {
+        private final BufferedInputStream in = new BufferedInputStream(System.in);
+
+        int nextInt() throws IOException {
+            int c;
+            do { c = in.read(); } while (c <= ' ' && c != -1);
+            if (c == -1) throw new IOException("Unexpected end of input");
+            int sign = 1;
+            if (c == '-') {
+                sign = -1;
+                c = in.read();
+            }
+            int value = 0;
+            while (c > ' ') {
+                value = value * 10 + c - '0';
+                c = in.read();
+            }
+            return value * sign;
+        }
+
+        String next() throws IOException {
+            int c;
+            do { c = in.read(); } while (c <= ' ' && c != -1);
+            if (c == -1) throw new IOException("Unexpected end of input");
+            StringBuilder token = new StringBuilder();
+            while (c > ' ') {
+                token.append((char) c);
+                c = in.read();
+            }
+            return token.toString();
+        }
+    }
+}
