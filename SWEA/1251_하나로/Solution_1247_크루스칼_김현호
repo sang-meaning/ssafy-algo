@@ -1,0 +1,124 @@
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.util.Arrays;
+
+public class Solution_1251_크루스칼_김현호 {
+    static class Edge implements Comparable<Edge> {
+        int from, to;
+        long weight;
+
+        Edge(int from, int to, long weight) {
+            this.from = from;
+            this.to = to;
+            this.weight = weight;
+        }
+
+        @Override
+        public int compareTo(Edge other) {
+            return Long.compare(this.weight, other.weight);
+        }
+    }
+
+    static int[] parent, size;
+
+    static int find(int vertex) {
+        if (parent[vertex] == vertex) return vertex;
+        return parent[vertex] = find(parent[vertex]); // 경로 압축
+    }
+
+    static boolean union(int a, int b) {
+        int rootA = find(a);
+        int rootB = find(b);
+        if (rootA == rootB) return false; // 추가하면 사이클 발생
+
+        if (size[rootA] < size[rootB]) {
+            int temp = rootA;
+            rootA = rootB;
+            rootB = temp;
+        }
+        parent[rootB] = rootA;
+        size[rootA] += size[rootB];
+        return true;
+    }
+
+    public static void main(String[] args) throws Exception {
+        FastScanner fs = new FastScanner();
+        StringBuilder output = new StringBuilder();
+        int T = fs.nextInt();
+
+        for (int tc = 1; tc <= T; tc++) {
+            int n = fs.nextInt();
+            long[] x = new long[n];
+            long[] y = new long[n];
+            // 입력은 x 좌표 전체, y 좌표 전체 순서이다.
+            for (int i = 0; i < n; i++) x[i] = fs.nextInt();
+            for (int i = 0; i < n; i++) y[i] = fs.nextInt();
+            double E = Double.parseDouble(fs.next());
+
+            Edge[] edges = new Edge[n * (n - 1) / 2];
+            int index = 0;
+            for (int i = 0; i < n; i++) {
+                for (int j = i + 1; j < n; j++) {
+                    long dx = x[i] - x[j];
+                    long dy = y[i] - y[j];
+                    edges[index++] = new Edge(i, j, dx * dx + dy * dy);
+                }
+            }
+            Arrays.sort(edges);
+
+            parent = new int[n];
+            size = new int[n];
+            for (int i = 0; i < n; i++) {
+                parent[i] = i;
+                size[i] = 1;
+            }
+
+            long sum = 0;
+            int selected = 0;
+            for (Edge edge : edges) {
+                if (union(edge.from, edge.to)) {
+                    sum += edge.weight;
+                    if (++selected == n - 1) break;
+                }
+            }
+
+            // 모든 간선에 같은 E를 곱하므로 MST를 구한 뒤 한 번 곱한다.
+            long answer = Math.round(sum * E);
+            output.append('#').append(tc).append(' ').append(answer).append('\n');
+        }
+        System.out.print(output);
+    }
+
+    static class FastScanner {
+        private final BufferedInputStream in = new BufferedInputStream(System.in);
+
+        int nextInt() throws IOException {
+            int c;
+            do { c = in.read(); } while (c <= ' ' && c != -1);
+            if (c == -1) throw new IOException("Unexpected end of input");
+            int sign = 1;
+            if (c == '-') {
+                sign = -1;
+                c = in.read();
+            }
+            int value = 0;
+            while (c > ' ') {
+                value = value * 10 + c - '0';
+                c = in.read();
+            }
+            return value * sign;
+        }
+
+        String next() throws IOException {
+            int c;
+            do { c = in.read(); } while (c <= ' ' && c != -1);
+            if (c == -1) throw new IOException("Unexpected end of input");
+            StringBuilder token = new StringBuilder();
+            while (c > ' ') {
+                token.append((char) c);
+                c = in.read();
+            }
+            return token.toString();
+        }
+    }
+}
