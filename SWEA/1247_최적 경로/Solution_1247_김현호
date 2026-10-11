@@ -1,0 +1,82 @@
+import java.io.BufferedInputStream;
+import java.io.IOException;
+
+public class Solution_1247_김현호 {
+    static int n, answer;
+    static int[][] distance;
+    static boolean[] visited;
+
+    static void dfs(int current, int count, int cost) {
+        // 현재 위치에서 집까지의 직선 맨해튼 거리는 남은 경로의 하한이다.
+        // 이 하한만 더해도 기존 정답 이상이면 더 탐색할 필요가 없다.
+        if (cost + distance[current][n + 1] >= answer) return;
+
+        if (count == n) {
+            answer = cost + distance[current][n + 1];
+            return;
+        }
+
+        for (int next = 1; next <= n; next++) {
+            if (visited[next]) continue;
+            visited[next] = true;
+            dfs(next, count + 1, cost + distance[current][next]);
+            visited[next] = false; // 다른 방문 순서를 탐색하기 위해 복구
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        FastScanner fs = new FastScanner();
+        StringBuilder output = new StringBuilder();
+        int T = fs.nextInt();
+
+        for (int tc = 1; tc <= T; tc++) {
+            n = fs.nextInt();
+            // 0: 회사, 1~n: 고객, n+1: 집
+            int[] x = new int[n + 2];
+            int[] y = new int[n + 2];
+            x[0] = fs.nextInt();
+            y[0] = fs.nextInt();
+            x[n + 1] = fs.nextInt();
+            y[n + 1] = fs.nextInt();
+            for (int i = 1; i <= n; i++) {
+                x[i] = fs.nextInt();
+                y[i] = fs.nextInt();
+            }
+
+            distance = new int[n + 2][n + 2];
+            for (int i = 0; i < n + 2; i++) {
+                for (int j = i + 1; j < n + 2; j++) {
+                    int value = Math.abs(x[i] - x[j]) + Math.abs(y[i] - y[j]);
+                    distance[i][j] = distance[j][i] = value;
+                }
+            }
+
+            visited = new boolean[n + 2];
+            answer = Integer.MAX_VALUE;
+            dfs(0, 0, 0);
+            output.append('#').append(tc).append(' ').append(answer).append('\n');
+        }
+        System.out.print(output);
+    }
+
+    static class FastScanner {
+        private final BufferedInputStream in = new BufferedInputStream(System.in);
+
+        int nextInt() throws IOException {
+            int c;
+            do { c = in.read(); } while (c <= ' ' && c != -1);
+            if (c == -1) throw new IOException("Unexpected end of input");
+            int sign = 1;
+            if (c == '-') {
+                sign = -1;
+                c = in.read();
+            }
+            int value = 0;
+            while (c > ' ') {
+                value = value * 10 + c - '0';
+                c = in.read();
+            }
+            return value * sign;
+        }
+    }
+}
