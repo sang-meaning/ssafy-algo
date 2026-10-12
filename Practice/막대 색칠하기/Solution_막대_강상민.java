@@ -17,6 +17,7 @@ public class Solution_막대_강상민 {
         }
 
         System.out.println("답은 "+dp[n]+"지롱");
+        
     }
     
 }
