@@ -1,0 +1,94 @@
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
+public class Solution_1249_김현호 {
+    static final int[] dr = {-1, 1, 0, 0};
+    static final int[] dc = {0, 0, -1, 1};
+
+    static class State implements Comparable<State> {
+        int row, col, cost;
+
+        State(int row, int col, int cost) {
+            this.row = row;
+            this.col = col;
+            this.cost = cost;
+        }
+
+        @Override
+        public int compareTo(State other) {
+            return Integer.compare(this.cost, other.cost);
+        }
+    }
+
+    static int dijkstra(int[][] map) {
+        int n = map.length;
+        int[][] dist = new int[n][n];
+        for (int[] row : dist) Arrays.fill(row, Integer.MAX_VALUE);
+        PriorityQueue<State> pq = new PriorityQueue<>();
+        dist[0][0] = 0;
+        pq.offer(new State(0, 0, 0));
+
+        while (!pq.isEmpty()) {
+            State current = pq.poll();
+            // 더 짧은 경로로 이미 갱신된 과거 상태는 무시한다.
+            if (current.cost != dist[current.row][current.col]) continue;
+            if (current.row == n - 1 && current.col == n - 1) {
+                return current.cost;
+            }
+
+            for (int d = 0; d < 4; d++) {
+                int nr = current.row + dr[d];
+                int nc = current.col + dc[d];
+                if (nr < 0 || nr >= n || nc < 0 || nc >= n) continue;
+
+                // 다음 칸에 들어갈 때 그 칸의 복구 시간을 더한다.
+                int nextCost = current.cost + map[nr][nc];
+                if (nextCost < dist[nr][nc]) {
+                    dist[nr][nc] = nextCost;
+                    pq.offer(new State(nr, nc, nextCost));
+                }
+            }
+        }
+        return dist[n - 1][n - 1];
+    }
+
+    public static void main(String[] args) throws Exception {
+        FastScanner fs = new FastScanner();
+        StringBuilder output = new StringBuilder();
+        int T = fs.nextInt();
+
+        for (int tc = 1; tc <= T; tc++) {
+            int n = fs.nextInt();
+            int[][] map = new int[n][n];
+            for (int r = 0; r < n; r++) {
+                String row = fs.next();
+                for (int c = 0; c < n; c++) map[r][c] = row.charAt(c) - '0';
+            }
+            output.append('#').append(tc).append(' ')
+                  .append(dijkstra(map)).append('\n');
+        }
+        System.out.print(output);
+    }
+
+    static class FastScanner {
+        private final BufferedInputStream in = new BufferedInputStream(System.in);
+
+        int nextInt() throws IOException {
+            return Integer.parseInt(next());
+        }
+
+        String next() throws IOException {
+            int c;
+            do { c = in.read(); } while (c <= ' ' && c != -1);
+            if (c == -1) throw new IOException("Unexpected end of input");
+            StringBuilder token = new StringBuilder();
+            while (c > ' ') {
+                token.append((char) c);
+                c = in.read();
+            }
+            return token.toString();
+        }
+    }
+}
