@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Solution_5643_이름 {
+public class Solution_5643_김현호 {
     public static void main(String[] args) throws Exception {
         FastScanner fs = new FastScanner();
         StringBuilder answer = new StringBuilder();
