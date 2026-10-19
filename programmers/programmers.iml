@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/가장 많이 받은 선물" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/같은 숫자는 싫어" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/게임 맵 최단거리" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/구명보트" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/기능개발" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/다리를 지나는 트럭" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/두 큐 합 같게 만들기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/무인도 여행" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/미로 탈출" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/불량 사용자" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/블록 이동하기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/섬 연결하기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/소수 만들기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/소수찾기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/양과 늑대" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/연속 부분 수열 합의 개수" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/연속된 부분 수열의 합" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/올바른 괄호" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/주식가격" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/체육복" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/카드 뭉치" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/크레인 인형뽑기 게임" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/타겟넘버" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/피로도" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/할인 행사" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/1217_거듭 제곱" isTestSource="false" packagePrefix="swea" />
+      <sourceFolder url="file://$MODULE_DIR$/1225_암호생성기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1226_미로1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1233_사칙연산유효성검사" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1247_최적 경로" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1248_공통조상" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1249_보급로" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1251_하나로" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1267_작업순서" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/14510_나무 높이" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1767_프로세서 연결하기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1861_정사각형 방" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1873_상호의 배틀필드" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1949_등산로 조성" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1952_수영장" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1953_탈주범 검거" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2105_디저트 카페" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2112_보호 필름" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2115_벌꿀채취" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2117_홈 방범 서비스" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2382_미생물 격리" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2383_점심 식사시간" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2477_차량 정비소" isTestSource="false" packagePrefix="coding_prac" />
+      <sourceFolder url="file://$MODULE_DIR$/25004_경유지운송" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/25430_커피점 &amp; 제과점" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/25938_도로 파괴" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/26059_과일 등급 분류" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/26070_보석 수집 로봇" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/26071_블록 제거 게임" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/26944_이삿집상자나르기" isTestSource="false" packagePrefix="coding_prac" />
+      <sourceFolder url="file://$MODULE_DIR$/2806_N-Queen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/3260_두수의 덧셈" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/3499_퍼펙트 셔플" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/3952_줄 세우기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/4012_요리사" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/4014_활주로 건설" isTestSource="false" packagePrefix="d4" />
+      <sourceFolder url="file://$MODULE_DIR$/4065_LSC" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/4123_숫자 만들기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/4128_요리사" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/4130_특이한 자석" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5644_무선충전" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5648_원자 소멸 시뮬레이션" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5650_핀볼 게임" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5653_줄기세포배양" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5656_벽돌 깨기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5658_보물상자 비밀번호" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/9229_한빈이와 SpotMart" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
